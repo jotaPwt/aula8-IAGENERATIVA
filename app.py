@@ -29,7 +29,8 @@ if uploaded_file is not None:
     
     with col1:
         st.subheader("Imagem Original")
-        st.image(image, use_column_width=True)
+        # Atualizado: use_container_width substitui o parâmetro antigo para remover o aviso amarelo
+        st.image(image, use_container_width=True)
         
     # Converter imagem PIL para formato OpenCV (BGR) para o modelo processar
     img_array = np.array(image)
@@ -48,7 +49,8 @@ if uploaded_file is not None:
         
     with col2:
         st.subheader("Objetos Identificados")
-        st.image(result_image, use_column_width=True)
+        # Atualizado: use_container_width aplicado aqui também
+        st.image(result_image, use_container_width=True)
         
     # Exibir resumo das detecções em texto abaixo das imagens
     st.success("Processamento concluído com sucesso!")
